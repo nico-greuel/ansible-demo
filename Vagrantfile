@@ -34,7 +34,6 @@ Vagrant.configure("2") do |config|
     app.vm.hostname = "ansible1"
     app.vm.box = "geerlingguy/centos7"
     app.vm.network :private_network, ip: "192.168.60.31"
-    config.vm.provision :shell, path: "bootstrap.sh"
   end
 
   config.vm.box = "geerlingguy/centos7"
