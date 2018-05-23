@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"/Users/ngreuel/Desktop/itech_workshop/ansible","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/ngreuel/Desktop/itech_workshop/material/ansible_skeleton/ansible_skeleton","disabled":false,"__vagrantfile":true}}}
