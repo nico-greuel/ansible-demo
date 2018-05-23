@@ -1,0 +1,7 @@
+---
+- hosts: all
+  sudo: yes
+
+  tasks:
+    - name: Setup NTP
+      include_tasks: tasks/ntp.yml
