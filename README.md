@@ -3,7 +3,9 @@ basic layout to start testing
 
 ## ad-hoc commands examples
 ansible {server/group} -a "hostname" -i hosts
+
 ansible {server/group} -a "df -h" -i hosts
+
 ansible {server/group} -a "date" -i hosts
 
 ansible {server/group} -s -m yum -a "name=ntp state=installed" -i hosts
