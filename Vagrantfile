@@ -4,7 +4,6 @@
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.vm.provider :virtualbox do |vb|
-  config.vm.synced_folder "/Users/ngreuel/Desktop/itech_workshop/ansible","/home/vagrant"
     vb.customize ["modifyvm", :id, "--memory", "256"]
   end
 
@@ -27,13 +26,6 @@ Vagrant.configure("2") do |config|
     app.vm.hostname = "db1.dev"
     app.vm.box = "geerlingguy/centos7"
     app.vm.network :private_network, ip: "192.168.60.21"
-  end
-
-  # Management node for Windows users 
-  config.vm.define "ansible1" do |app|
-    app.vm.hostname = "ansible1"
-    app.vm.box = "geerlingguy/centos7"
-    app.vm.network :private_network, ip: "192.168.60.31"
   end
 
   config.vm.box = "geerlingguy/centos7"
