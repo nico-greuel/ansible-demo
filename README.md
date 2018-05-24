@@ -14,6 +14,3 @@ The -s option (alias for --sudo) tells Ansible to run the command with sudo. Thi
 
 ## playbook example
 ansible-playbook playbook.yml -i hosts
-
-## vagrant
-vagrant box add --name geerlingguy/centos7 centos7.box
