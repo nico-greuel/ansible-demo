@@ -1,0 +1,7 @@
+---
+- hosts: all
+  sudo: yes
+
+  tasks:
+    - name: Switch to German keyboard layout
+      shell: localectl set-keymap de-latin1
