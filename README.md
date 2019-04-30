@@ -14,3 +14,6 @@ The -s option (alias for --sudo) tells Ansible to run the command with sudo. Thi
 
 ## playbook example
 ansible-playbook playbook.yml -i hosts
+
+## sources
+https://github.com/picotrading/ansible-motd
