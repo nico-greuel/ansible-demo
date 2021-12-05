@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+
+  tasks:
+
+    - name: stop running container
+      command: docker stop hello-apache2
+      ignore_errors: true
+
+    - name: remove apache2 container
+      command: docker rm hello-apache2
+      ignore_errors: true
+
+    - name: remove apache2 image before rebuilding
+      community.docker.docker_image:
+        name: hello-apache2
+        state: absent
+
+    - name: Build apache2 image
+      community.docker.docker_image:
+        build:
+          path: ../files/docker/
+        name: hello-apache2
+        source: build
+        state: present
+
+    - name: "Run docker-compose up -d"
+      command: docker-compose up -d
+      args:
+        chdir: ../files/docker/

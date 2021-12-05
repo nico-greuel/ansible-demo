@@ -1,6 +1,0 @@
----
-
-- name: Rollout the motd
-  template:
-    src: motd.j2
-    dest: /etc/motd
