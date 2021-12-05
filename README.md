@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ansible-demo
 basic layout to start testing
 
@@ -17,3 +18,6 @@ ansible-playbook tasks/playbook.yml -i hosts
 
 ## sources
 https://github.com/picotrading/ansible-motd
+=======
+# ansible-demo
+>>>>>>> 26856f647b62a033eeb5f6884732c464608d8484
