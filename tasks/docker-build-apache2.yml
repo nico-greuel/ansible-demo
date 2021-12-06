@@ -3,13 +3,25 @@
 
   tasks:
 
-    - name: stop running container
-      command: docker stop hello-apache2
-      ignore_errors: true
+    - name: check if webserver is running
+      command: docker ps
+      register: dockerps
 
-    - name: remove apache2 container
-      command: docker rm hello-apache2
-      ignore_errors: true
+    - name: debug
+      debug:
+        var: dockerps
+        verbosity: 1
+
+    - name: stop running container
+
+      block:
+        - name: stop apache2 container
+          command: docker stop hello-apache2-server1
+
+        - name: remove apache2 container
+          command: docker rm hello-apache2-server1
+
+      when: '"apache2-server1" in dockerps.stdout'
 
     - name: remove apache2 image before rebuilding
       community.docker.docker_image:

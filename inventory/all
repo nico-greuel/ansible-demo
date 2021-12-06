@@ -1,0 +1,3 @@
+# hosts
+
+hello-apache2-server1 ansible_ssh_host=localhost annsible_port=12345

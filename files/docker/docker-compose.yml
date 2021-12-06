@@ -2,10 +2,19 @@ version: '2.1'
 
 services:
 
-  hello-apache2:
+  hello-apache2-server1:
     image: hello-apache2
     mem_limit: 2G
-    container_name: hello-apache2
+    container_name: hello-apache2-server1
     restart: always
     ports:
       - "8080:80"
+      - "12345:22"
+
+  # hello-apache2-server2:
+  #   image: hello-apache2
+  #   mem_limit: 2G
+  #   container_name: hello-apache2-server2
+  #   restart: always
+  #   ports:
+  #     - "8081:80"
