@@ -4,7 +4,7 @@
   tasks:
 
     - name: check if webserver is running
-      command: docker ps
+      command: docker ps -a
       register: dockerps
 
     - name: debug
@@ -13,14 +13,13 @@
         verbosity: 1
 
     - name: stop running container
-
       block:
         - name: stop apache2 container
           command: docker stop hello-apache2-server1
 
         - name: remove apache2 container
           command: docker rm hello-apache2-server1
-
+          
       when: '"apache2-server1" in dockerps.stdout'
 
     - name: remove apache2 image before rebuilding

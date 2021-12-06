@@ -8,3 +8,5 @@ RUN echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 RUN apt-get update
 RUN apt-get -y install openssh-server python
 COPY sshd_config /etc/ssh/sshd_config
+## security config
+COPY httpd.conf /usr/local/apache2/conf
